@@ -34,5 +34,17 @@
     THEORY: PID regulation (Sliding Motor Control)
     </a>
 
+<h3>Microcontrollers</h3>
+<br><a href="http://www.atmel.com/Images/Article_AC10_BLDC-Motor-Control.pdf" target="_blank">
+    (Schematics) of ATmega BLDC microcontroller
+    </a>
+
+<br><a href="https://app.box.com/shared/5bbiakshsg/1/33068500/759600940/1" target="_blank">
+    (THEORY) Microcontroller Software Design
+    </a>
+
+<br><a href="http://www.instructables.com/id/BLDC-Motor-Control-with-Arduino-salvaged-HD-motor/?ALLSTEPS" target="_blank">
+    Example of BLDC microcontroller
+    </a>
 
 </body>
