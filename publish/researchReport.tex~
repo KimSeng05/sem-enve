@@ -125,8 +125,7 @@
     Pulse width modulation is a method of delievering energy through a
     succession of pulses rather than a continuously varying (analog) signal.
     The PWM regulates energy flow to the motor shaft by limiting the pulse width
-    of a current signal. This is especially important for the BLDC motor
-    controller, in which during start up conditions
+    of a current signal.
 
 \subsection{BLDC Motor Sensorless Control}
 \footnote{\url{http://scholar.lib.vt.edu/theses/available/etd-09152003-171904/unrestricted/T.pdf}}
