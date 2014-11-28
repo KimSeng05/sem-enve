@@ -1,0 +1,122 @@
+%-------------------------------------------------------------------------------
+  %PACKAGES
+  \documentclass[a4paper,landscape]{article}
+  \usepackage[colorlinks=true]{hyperref}
+  \usepackage{microtype}
+  \usepackage[english]{babel}
+  \usepackage{url}
+  \usepackage[T1]{fontenc}
+  \usepackage[table]{xcolor}
+  \usepackage{fancyhdr}
+  \usepackage{titlesec}
+  \titlespacing{\section}{-5cm}{10pt}{10pt}
+
+%-------------------------------------------------------------------------------
+  %TITLE
+  \title{Electronics Parts List}
+  \date{Last Updated: \today}
+  \begin{document}
+  \pagestyle{fancy}
+  \maketitle
+  \lhead{} \rhead{}
+\section{MCUs}
+    {\footnotesize
+    \rowcolors{2}{gray!25}{white}
+    \hspace*{-6cm}\begin{tabular}{lllllllll}
+    \rowcolor{gray!50}
+    \hline
+    \textbf{Vendor}
+    & \textbf{Serial}
+    & \textbf{CPU}
+    & \textbf{Clock Speed}
+    & \textbf{Flash}
+    & \textbf{Pin Count}
+    & \textbf{Power Supply}
+    & \textbf{Operational Temps}
+    & \textbf{Status}\\
+    \hline
+  Atmel
+      & \href{http://www.atmel.com/devices/atmega328p.aspx}{ATmega329P-PU}
+      & 8bit AVR
+      & 20MHz
+      & 32Kb
+      & 28
+      & 1.8-5.5V
+      & 40-85
+      & Faulty in Freetronics Eleven; Need replacement\\
+  \hline
+  \end{tabular}}
+
+\section{MOSFETs}
+    {\footnotesize
+    \rowcolors{2}{gray!25}{white}
+    \hspace*{-6cm}\begin{tabular}{lllllllll}
+    \rowcolor{gray!50}
+    \hline
+    \textbf{Vendor}
+    & \textbf{Serial}
+    & \textbf{$V_{DSS}$}
+    & \textbf{$I_{DC,25C}$}
+    & \textbf{$I_{DC,100C}$}
+    & \textbf{$I_{DP}$}
+    & \textbf{$I_{GSS}$}
+    & \textbf{$T_{oper}$}
+    & \textbf{Status}\\
+    \hline
+  %MOSFETs cheap
+      Fairchild
+      & \href{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Components/General/FQP30N06L.pdf}{FQP30N06L}
+      & 60V
+      & 32A
+      & 22.6A
+      & 128A
+      & $\pm$20V
+      & -$55^{\circ}C$ -- +$175^{\circ}$
+      & Last order: 2014-11-24 via \href{https://www.sparkfun.com/products/10213}{Sparkfun}\\
+  %From vedder tutorial
+      Int. Recti
+      & \href{http://www.irf.com/product-info/datasheets/data/irfs3006pbf.pdf}{IRFS3006PBF}
+      & 60V
+      & 270A
+      & 191A
+      & 1080A
+      & $\pm$20V
+      & -$55^{\circ}C$ -- +$175^{\circ}$
+      & Not ordered. These are expensive\\
+  \hline
+  \end{tabular}}
+
+\section{Drivers}
+    {\footnotesize
+    \rowcolors{2}{gray!25}{white}
+    \hspace*{-6cm}\begin{tabular}{llllllll}
+    \rowcolor{gray!50}
+    \hline
+    \textbf{Vendor}
+    & \textbf{Serial}
+    & \textbf{Size}
+    & \textbf{$V_{s}$ Range}
+    & \textbf{$I_{out}$ Per Channel}
+    & \textbf{$I_{out}$ Peak Per Channel}
+    & \textbf{Status}\\
+    \hline
+  %Carl Recommened
+    Texas Instruments
+    & \href{http://www.ti.com/lit/ds/symlink/l293d.pdf}{L293}
+    & Quadruple Half-H Drivers
+    & 4.5V -- 36V
+    & 1A
+    & 2A
+    & Supplied from Carl; Need to buy\\
+  %From vedder tutorial
+    Texas Instruments
+    & \href{http://www.ti.com/lit/ds/symlink/drv8302.pdf}{DRV8302}
+    & 56 Pin Gate Driver
+    & 8V -- 60V
+    &
+    &
+    & Not Ordered.\\
+  \hline
+  \end{tabular}}
+
+\end{document}

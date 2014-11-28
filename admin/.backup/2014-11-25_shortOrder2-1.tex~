@@ -1,0 +1,43 @@
+\documentclass[a4paper,landscape]{article}
+
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{microtype}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage[table]{xcolor}
+\title{Electronics Short Order 2 rev. 1}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+
+\small
+\rowcolors{2}{gray!25}{white}
+%\hspace*{-6cm}\begin{tabular}{ll>{\footnotesize}llll}
+\hspace*{-6cm}\begin{tabular}{llllll}
+\rowcolor{gray!50}
+\hline
+Product & Brand/Data & Serial & Unit Cost & Quantity & Total Cost\\
+\hline
+%Capacitors
+  \href{http://www.altronics.com.au/p/r3515-assorted-ceramic-capacitors-100pcs/}{
+  Capacitor 100pck} &
+  & & 8.50 & 1 & 8.50\\
+%ATmega328P-Pu
+  \href{http://www.jaycar.com.au/productView.asp?ID=ZZ8726&form=CAT2&SUBCATID=972#1}{ATmega328P-PU}
+  & Atmel & ATmega328P-PU & 9.95 & 1 & 9.95\\
+%%AVR Programmer
+%  \href{https://www.sparkfun.com/products/9825}{AVR Programmer}
+%  & & PGM-09825 & 14.95 & 1 & 14.95\\
+%Voltage Regulators
+  \href{https://www.sparkfun.com/products/107}{Voltage Regulator}
+  & \href{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Components/General/TO-220.pdf}{[DATASHEET]} & COM-00107 & 0.95 & 5 & 4.75\\
+\hline
+\hline
+\multicolumn{5}{l}{\textbf{Total}} & \textbf{13.25}\\
+\hline
+\end{tabular}
+
+
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[a4paper,landscape]{article}
+
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{microtype}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage[table]{xcolor}
+\title{Electronics Short Order 2}
+\date{Last Updated: \today}
+
+\begin{document}
+\maketitle
+
+\small
+\rowcolors{2}{gray!25}{white}
+%\hspace*{-6cm}\begin{tabular}{ll>{\footnotesize}llll}
+\hspace*{-6cm}\begin{tabular}{llllll}
+\rowcolor{gray!50}
+\hline
+Product & Brand/Data & Serial & Unit Cost & Quantity & Total Cost\\
+\hline
+%MOSFETs cheap
+  \href{https://www.sparkfun.com/products/10213}{
+  N-Channel MOSFETs 60V 30A} &
+  \href{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Components/General/FQP30N06L.pdf}{Sparkfun} &
+  FQP30N06L & 0.95 & 10 & 9.50\\
+%MOSTET Kits
+  \href{https://www.sparkfun.com/products/10256}{
+  MOSFET Power Control Kit} &
+  SparkFun &
+  COM-10256 & 3.95 & 3 & 11.85\\
+%Hall Sensors
+  \href{http://www.ebay.com.au/itm/A3144-A3144E-OH3144E-Hall-Effect-Sensor-10pcs-/111474593886?pt=AU_B_I_Electrical_Test_Equipment&hash=item19f467505e}{
+  Hall Effect Sensors 10pck} &
+  \href{http://www.allegromicro.com/~/media/Files/Datasheets/A3141-2-3-4-Datasheet.ashx}{Allegro MS} &
+  A3144/A3144E/OH3144E & 1.94 & 1 & 1.94\\
+%Resistors
+  \href{http://www.ebay.com.au/itm/600PCS-30-Values-Kinds-1-1-4W-Metal-Film-Resistor-Assortment-Kit-20pcs-per-each-/281182859085?pt=AU_B_I_Electrical_Test_Equipment&hash=item4177cdef4d}{
+  Resistor 600pck, 30 Values, 1\% 0.25W Metal Film} &
+  & & 3.25 & 1 & 3.25\\
+%Matrix PCB
+  \href{http://www.ebay.com.au/itm/5-Pieces-Prototyping-Universal-Matrix-Printed-Circuit-Board-PCB-5x7cm-/121380277572?pt=AU_B_I_Electrical_Test_Equipment&hash=item1c42d40d44}{
+  Matrix PCB 5cm$\times$7cm} &
+  & & 6.25 & 6 & 37.5\\
+%atmega328P
+%Capacitors
+  \href{http://www.amazon.com/Joe-Knows-Electronics-Value-Capacitor/dp/B007SVHFXO/}{
+  Capacitor 645pck, 33 Values} &
+  & & 19.99 & 1 & 19.99\\
+\hline
+\hline
+\multicolumn{5}{l}{\textbf{Total}} & \textbf{84.03}\\
+\hline
+\end{tabular}
+
+
+\end{document}
