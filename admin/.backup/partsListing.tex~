@@ -73,6 +73,17 @@
       & $\pm$20V
       & -$55^{\circ}C$ -- +$175^{\circ}$
       & Last order: 2014-11-24 via \href{https://www.sparkfun.com/products/10213}{Sparkfun}\\
+  %From Carl
+      Int. Recti
+      &
+      \href{http://pdf1.alldatasheet.com/datasheet-pdf/view/68121/IRF/IRF1405.html}{IRF1405}
+      & 55V
+      & 169A
+      & 118A
+      & 680A
+      & $\pm$20V
+      & -$55^{\circ}C$ -- +$175^{\circ}$
+      & 6 (+6 from Carl) in stock. Used in PB1\\
   %From vedder tutorial
       Int. Recti
       & \href{http://www.irf.com/product-info/datasheets/data/irfs3006pbf.pdf}{IRFS3006PBF}
@@ -108,6 +119,14 @@
     & 1A
     & 2A
     & Supplied from Carl; Need to buy\\
+  %From vedder tutorial
+    Texas Instruments
+    & \href{http://www.ti.com/lit/ds/symlink/drv8302.pdf}{DRV8302}
+    & 56 Pin Gate Driver
+    & 8V -- 60V
+    &
+    &
+    & Not Ordered.\\
   \hline
   \end{tabular}}
 
