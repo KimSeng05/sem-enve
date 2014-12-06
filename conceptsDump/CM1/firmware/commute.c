@@ -22,6 +22,7 @@ float readB=0.0;
 float readC=0.0;
 
 int lastRun=0;
+int speed=50;
 
 void setup()
 {
@@ -67,7 +68,7 @@ void loop()
 
   if (lastRun == 1) {
     lcd.print(A-B);
-    analogWrite(gHA, 255);
+    analogWrite(gHA, speed);
     analogWrite(gHB, 0);
     analogWrite(gHC, 0);
     analogWrite(gLA, 0);
@@ -76,7 +77,7 @@ void loop()
     lastRun=5;
   } else if (lastRun == 5) {
     lcd.print(A-C)
-    analogWrite(gHA, 255);
+    analogWrite(gHA, speed);
     analogWrite(gHB, 0);
     analogWrite(gHC, 0);
     analogWrite(gLA, 0);
@@ -86,7 +87,7 @@ void loop()
   } else if (lastRun == 4) {
     lcd.print(B-C);
     analogWrite(gHA, 0);
-    analogWrite(gHB, 255);
+    analogWrite(gHB, speed);
     analogWrite(gHC, 0);
     analogWrite(gLA, 0);
     analogWrite(gLB, 0);
@@ -95,7 +96,7 @@ void loop()
   } else if (lastRun == 6) {
     lcd.print(B-A);
     analogWrite(gHA, 0);
-    analogWrite(gHB, 255);
+    analogWrite(gHB, speed);
     analogWrite(gHC, 0);
     analogWrite(gLA, 255);
     analogWrite(gLB, 0);
@@ -105,7 +106,7 @@ void loop()
     lcd.print(C-A);
     analogWrite(gHA, 0);
     analogWrite(gHB, 0);
-    analogWrite(gHC, 255);
+    analogWrite(gHC, speed);
     analogWrite(gLA, 255);
     analogWrite(gLB, 0);
     analogWrite(gLC, 0);
@@ -114,7 +115,7 @@ void loop()
     lcd.print(C-B);
     analogWrite(gHA, 0);
     analogWrite(gHB, 0);
-    analogWrite(gHC, 255);
+    analogWrite(gHC, speed);
     analogWrite(gLA, 0);
     analogWrite(gLB, 255);
     analogWrite(gLC, 0);
