@@ -1,0 +1,7 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Firmware}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Initialization Functions}{1}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Regulation Functions}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Commutation}{2}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Reading Hall Signals}{3}{subsection.2.4}

@@ -1,8 +1,0 @@
-\select@language {english}
-\contentsline {section}{\numberline {1}Tasks: Drive and Control}{1}{section.1}
-\contentsline {section}{\numberline {2}Control Systems Introduction}{1}{section.2}
-\contentsline {subsection}{\numberline {2.1}Functions of Motor Control}{2}{subsection.2.1}
-\contentsline {section}{\numberline {3}DC Motor Controls}{2}{section.3}
-\contentsline {section}{\numberline {4}BLDC Motor Control}{2}{section.4}
-\contentsline {subsection}{\numberline {4.1}BLDC Motor Sensor Control}{3}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}BLDC Motor Sensorless Control}{3}{subsection.4.2}
