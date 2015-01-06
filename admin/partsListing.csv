@@ -1,0 +1,8 @@
+#stage,part,stock,used
+drive,irs2181,6,0
+drive,drv8302,2,0
+fet,irf1405,12,9
+ctrl,atmega328p-pu,2,0
+ctrl,arduino_pro_mini,?,1
+
+
