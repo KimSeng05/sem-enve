@@ -1,0 +1,31 @@
+Motor Selection
+    Turnigy G46 Brushless Outrunner
+    http://www.hobbyking.com/hobbyking/store/__14404__Turnigy_G46_Brushless_Outrunner_670kv_46_Glow_.html
+
+    Recommended Battery: 4-5 Cells @ 14.4-18.5V
+    RPM: 670kv
+    Max Current: 40A
+    No Load Current: 10V/3.9A
+    Current Capacity: 55A/15sec
+    Internal Resistance: 0.04 ohm
+    Weight: 303g
+    Diameter of Shaft: 6mm
+    Dimensions: 76x50mm
+
+Motor Demand Calculations
+    Max Speed - for MOSFET dv/dt capabilities
+    Expected Max Acceleration (Start-up) - for MOSFET current capacity
+
+Power MOSFET Selection
+    Max Voltage = 20V
+    Max Current = 55A
+    Safety Factor = 10%
+    Require Current Rating = 1.1*55 ~ 60A
+
+    IRF1405
+        Breakdown: 55V
+        Max Pulsed Source Current: 680A
+
+
+
+

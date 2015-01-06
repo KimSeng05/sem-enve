@@ -4,6 +4,7 @@
 #define gLA
 #define gLB
 #define gLC
+#define LEDIndicator
 
 int speed=255;
 int safety_delay=1;

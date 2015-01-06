@@ -1,0 +1,209 @@
+%=== PACKAGES ==================================================================
+  \documentclass[a4paper]{article}
+  %Appearance
+  \usepackage{microtype} %better typography
+  \usepackage[english]{babel}
+  \usepackage{fancyhdr} %for fancy page style
+  \usepackage{color} %Added support for color text
+
+  %Document Dynamics
+  \usepackage[colorlinks=true]{hyperref} %Manage links
+  \hypersetup{linkcolor=blue}
+  \usepackage{url}
+  \usepackage{geometry} %For easy management of document margins
+  \usepackage{graphicx} %Allows for insertion of images in document
+  \graphicspath{ {figures/} {images/} }
+
+  %Technical
+  \usepackage{amsmath}
+  \usepackage{amsthm}
+  \usepackage{amssymb}
+  \usepackage{tikz}
+  \usepackage{listings} %To insert code blocks
+
+  %Drafting
+  \usepackage{todonotes}
+
+%=== TITLE =====================================================================
+  \title{\Large\textbf{BLDC Motor Controller Design}}
+  \author{Khanh J. Phan}
+  \date{Last Updated: \today}
+
+%=== FRONT MATTER ==============================================================
+  \begin{document}
+  \pagestyle{fancy} \lhead{} \rhead{}
+  \maketitle
+  \tableofcontents
+  %\listoffigures
+  %\listoftables
+
+%=== BODY ======================================================================
+\section{Motor Parameters}
+The motor selection is the first step taken in order to design the motor
+controller. The motor was selected based on the application it was to be used
+in. The vehicles average and maximum speeds, and peak acceleration/deceleration
+was used as the criterion.
+The motor selected was the \href{http://www.hobbyking.com/hobbyking/store/__14404__Turnigy_G46_Brushless_Outrunner_670kv_46_Glow_.html}{Turnigy
+G46 Brushless Outrunner}.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{ll}
+    \hline
+    Parameter & Value \\
+    \hline
+    Recommended Battery & 4-5 Cells @ 14.4-18.5V\\
+    RPM & 670kv\\
+    Max Current & 40A\\
+    No Load Current & 10V/3.9A\\
+    Current Capacity & 55A/15sec\\
+    Internal Resistance & 0.04 ohm\\
+    Weight & 303g\\
+    Diameter of Shaft & 6mm\\
+    Dimensions & 76x50mm\\
+    \hline
+    \end{tabular}
+    \caption{Motor Parameters}
+\end{figure}
+
+\subsection{Motor Demands}
+The boundary parameters mentioned previously are also essential in selecting
+the components for the power stage of the motor controller. These parameters are
+as follows;
+
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{ll}
+    \hline
+    Parameter & Value \\
+    \hline
+    Average Speed & 30 km h$^{-1}$\\
+    Peak Speed & 52 km h$^{-1}$\\
+    Wheel diameter & 0.6m\\
+    Wheel Reduction Ratio & 1:10\\
+    Average RPM (for switching frequency) & 2653 RPM\\
+    Peak RPM (for switching frequency) & 4598 RPM \\
+    Peak Acceleration (for dv/dt FET capabilities) & 0.856 RPM s$^{-1}$\\
+    \hline
+    \end{tabular}
+    \caption{Motor Boundaries}
+\end{figure}
+
+%=== MOSFETS ===================================================================
+\section{MOSFETs}
+The selected MOSFET based on the motor parameters was the \href{http://www.electusdistribution.com.au/products_uploaded/ZT-2468.pdf}{IRF1405}
+
+A summary of the MOSFETs parameters is below:
+
+\begin{figure}[h!]
+    \centering
+    \footnotesize
+    \begin{tabular}{llll}
+    \hline
+    & Parameter & Value & Conditions \\
+    \hline
+    $V_{(BR)DSS}$ & Drain-to-Source Breakdown Voltage & 55V & $V_{GS}=0V,~I_D=250\mu A$\\
+    $I_{D}$ & Continuous Drain Current & 169A & $V_{GS}=10V,~T_C=25^{\circ}C$\\
+    $I_{D}$ & Continuous Drain Current & 118A & $V_{GS}=10V,~T_C=100^{\circ}C$\\
+    $I_{DM}$ & Pulsed Drain Current & 680A & \\
+    $T_J$ & Operating Junction Temperature Range & $-55^{\circ}C - 175^{\circ}C$ & \\
+    $Q_G$ & Total Gate Charge & $170nC - 260nC$ & $I_D=101A,~V_{DS}=44V,~V_{GS}=10V$\\
+    $Q_{gs}$ & Gate-to-Source Charege & $44nC - 66nC$ & $I_D=101A,~V_{DS}=44V,~V_{GS}=10V$\\
+    $Q_{gd}$ & Gate-to-Drain (Miller) Charge & $62nC - 93nC$ & $I_D=101A,~V_{DS}=44V,~V_{GS}=10V$\\
+    $t_{r}$ & Rise time & 190ns & $V_{DD}=38V,~I_D=101A,~R_G=1.1\Omega,~V_{GS}=10V,$\\
+    $t_{f}$ & Fall time & 110ns & $V_{DD}=38V,~I_D=101A,~R_G=1.1\Omega,~V_{GS}=10V,$\\
+    \hline
+    \end{tabular}
+    \caption{IRF1405 Specifications}
+\end{figure}
+
+%=== DRIVER ====================================================================
+\section{Gate Driver}
+The N-Channel MOSFET gate driver is selected based on the MOSFET specifications.
+Additional criteria such as functionality and minimal power dissipation is
+secondary.
+
+%-----------------------------------------------------------
+\subsection{Peak Current Drive Requirements}
+This is the primary criterion for the driver selection. This is primarly based
+on how fast the application (motor) requires the MOSFET to be turned on and off
+(rise and fall time of the gate voltage).
+
+This turn on/off speed, $dT$, is in turn related to how fast the gate
+capacitance of the MOSFET can be charged and discharged.
+    \begin{equation}
+    dT = \frac{\left[ dV \times C\right]}{I} = \frac{Q}{I}
+    \end{equation}
+
+Where;
+    \begin{itemize}
+    \item $dV$ = Gate voltage
+    \item $C$ = Gate capacitance
+    \item $I$ = Peak drive current
+    \item $Q$ = Total gate charge
+    \end{itemize}
+
+In the case of the IRF1405, the total gate charge is \todo{not sure,
+used max total gate charge} 260nC and a turn on/off time of $t = t_r + t_f =
+300ns$
+
+Thus we have a required average current draw of
+    \begin{equation}
+    I = \frac{Q}{dT} = \frac{260 \times 10^{-9}}{300 \times 10^{-9}} = 0.9A
+    \end{equation}
+
+%-----------------------------------------------------------
+\subsection{Power Dissipation}
+There are three elements due to the charging and discharging of the gate
+capacitance of the MOSFET:
+    \begin{enumerate}
+    \item Power dissipation due to the charging and discharging of the gate
+    capacitance of the MOSFET, $P_C$
+    \item Power dissipation due to quiescent current draw of the MOSFET driver,
+    $P_Q$
+    \item Power dissipation due to cross-conduction (shoot-through) current in
+    the MOSFET driver, $P_S$
+    \end{enumerate}
+
+The following equations apply:
+    \begin{subequations}
+        \begin{align}
+        P_C = C_G\cdot V_{DD}^2\cdot F\\
+        P_Q = \left( I_{QH}\cdot D + I_{QL}\cdot\left( I-D\right)\right)\cdot
+        V_{DD}\\
+        P_S = CC\cdot F\cdot V_{DD}\\
+        \end{align}
+    \end{subequations}
+
+Where;
+    \begin{itemize}
+    \item $C_G$ is the MOSFET Gate Capacitance
+    \item $V_DD$ is the supply voltage of the MOSFET driver
+    \item $F$ is the switching frequency
+    \item $I_{QH}$ is the Quiescent current of the driver with the input in the
+    high state
+    \item $D$ is the Duty cycle of the switching waveform
+    \item $I_{QL}$ the quiescent current of the driver with the input in the low
+    side
+    \end{itemize}
+
+%-----------------------------------------------------------
+\subsection{IRS2181}
+The \href{http://www.irf.com/product-info/datasheets/data/irs2181.pdf}{IRS2181}
+was the selected MOSFET driver. It is fully operational up to 600V with 1.4-1.8A
+source/sink current capabilities.
+
+%=== FREQUENCY =================================================================
+\section{System Frequency}
+
+%=== MCU =======================================================================
+\section{Microcontroller}
+
+%=== REGULATION ================================================================
+\section{Regulation}
+
+%=== CURRENT SENSING ===========================================================
+\section{Current Sensing}
+
+\end{document}
+
