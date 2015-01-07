@@ -8,7 +8,7 @@ the [Shell Eco Marathon Challenge.](http://www.shell.com/global/environment-soci
 
 ## To-Do
 
-- ESC: Get PWM working on Timer1 (Jamie)
+- ESC: Investigate Dead-time for PWM (Jamie)
 - Snubbers: Current limiting circuit setup (Connor)
 - Sensors: Hall encoder IOs (Kim & Tim)
 - Sensors: Speed measurement (Rowan)
