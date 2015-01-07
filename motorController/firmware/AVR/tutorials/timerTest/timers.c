@@ -1,0 +1,20 @@
+/*
+Registers
+    Time Counter Control Registers:
+        TCCR0 (8-bit)
+        TCCR1 (16-bit) = TCCR1A + TCCR1B
+            TCCR1A (8-bit)
+            TCCR1B (8-bit)
+
+    Timer Count Register
+    holds the count value for the timers
+        TCNT0 (8-bit)
+        TCNT1 (16-bit)
+
+
+*/
+#include <avr/io.h>
+
+DDRB = 0b
+
+
