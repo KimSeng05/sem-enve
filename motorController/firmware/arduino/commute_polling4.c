@@ -5,7 +5,8 @@
 #define gLB
 #define gLC
 
-int safety_delay=1;
+int deadtime_ms=100;
+int on_ms=50;
 
 void setup()
 {
@@ -29,67 +30,85 @@ void loop()
 
 void commute_AB()
 {
-    digitalWrite(gHB, 0);
-    digitalWrite(gHC, 0);
-    digitalWrite(gLA, 0);
-    digitalWrite(gLC, 0);
+    delay(deadtime_ms);
+    digitalWrite(gHB, LOW);
+    digitalWrite(gHC, LOW);
+    digitalWrite(gLA, LOW);
+    digitalWrite(gLC, LOW);
     digitalWrite(gHA, HIGH);
     digitalWrite(gLB, HIGH);
-    delay(safety_delay*1000);
+    delay(on_ms_);
+    digitalWrite(gHA, LOW);
+    digitalWrite(gLB, LOW);
 }
 
 void commute_AC()
 {
-    digitalWrite(gHB, 0);
-    digitalWrite(gHC, 0);
-    digitalWrite(gLA, 0);
-    digitalWrite(gLB, 0);
+    delay(deadtime_ms);
+    digitalWrite(gHB, LOW);
+    digitalWrite(gHC, LOW);
+    digitalWrite(gLA, LOW);
+    digitalWrite(gLB, LOW);
     digitalWrite(gHA, HIGH);
     digitalWrite(gLC, HIGH);
-    delay(safety_delay*1000);
+    delay(on_ms_);
+    digitalWrite(gHA, LOW);
+    digitalWrite(gLC, LOW);
 }
 
 void commute_BA()
 {
-    digitalWrite(gHA, 0);
-    digitalWrite(gHC, 0);
-    digitalWrite(gLB, 0);
-    digitalWrite(gLC, 0);
+    delay(deadtime_ms);
+    digitalWrite(gHA, LOW);
+    digitalWrite(gHC, LOW);
+    digitalWrite(gLB, LOW);
+    digitalWrite(gLC, LOW);
     digitalWrite(gHB, HIGH);
     digitalWrite(gLA, HIGH);
-    delay(safety_delay*1000);
+    delay(on_ms_);
+    digitalWrite(gHB, LOW);
+    digitalWrite(gLA, LOW);
 }
 
 void commute_BC()
 {
-    digitalWrite(gHA, 0);
-    digitalWrite(gHC, 0);
-    digitalWrite(gLA, 0);
-    digitalWrite(gLB, 0);
+    delay(deadtime_ms);
+    digitalWrite(gHA, LOW);
+    digitalWrite(gHC, LOW);
+    digitalWrite(gLA, LOW);
+    digitalWrite(gLB, LOW);
     digitalWrite(gHB, HIGH);
     digitalWrite(gLC, HIGH);
-    delay(safety_delay*1000);
+    delay(on_ms_);
+    digitalWrite(gHB, LOW);
+    digitalWrite(gLC, LOW);
 }
 
 void commute_CA()
 {
-    digitalWrite(gHA, 0);
-    digitalWrite(gHB, 0);
-    digitalWrite(gLB, 0);
-    digitalWrite(gLC, 0);
+    delay(deadtime_ms);
+    digitalWrite(gHA, LOW);
+    digitalWrite(gHB, LOW);
+    digitalWrite(gLB, LOW);
+    digitalWrite(gLC, LOW);
     digitalWrite(gHC, HIGH);
     digitalWrite(gLA, HIGH);
-    delay(safety_delay*1000);
+    delay(on_ms_);
+    digitalWrite(gHC, LOW);
+    digitalWrite(gLA, LOW);
 }
 
 void commute_CB()
 {
-    digitalWrite(gHA, 0);
-    digitalWrite(gHB, 0);
-    digitalWrite(gLA, 0);
-    digitalWrite(gLC, 0);
+    delay(deadtime_ms);
+    digitalWrite(gHA, LOW);
+    digitalWrite(gHB, LOW);
+    digitalWrite(gLA, LOW);
+    digitalWrite(gLC, LOW);
     digitalWrite(gHC, HIGH);
     digitalWrite(gLB, HIGH);
-    delay(safety_delay*1000);
+    delay(on_ms_);
+    digitalWrite(gHC, LOW);
+    digitalWrite(gLB, LOW);
 }
 
