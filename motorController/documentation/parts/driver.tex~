@@ -1,0 +1,48 @@
+%=== DRIVER ====================================================================
+\section{Gate Driver}
+The N-Channel MOSFET gate driver is selected based on the MOSFET specifications.
+Additional criteria such as functionality and minimal power dissipation is
+secondary.
+
+%-----------------------------------------------------------
+\subsection{Peak Current Drive Requirements}
+This is the primary criterion for the driver selection. This is primarly based
+on how fast the application (motor) requires the MOSFET to be turned on and off
+(rise and fall time of the gate voltage).
+
+This turn on/off speed, $dT$, is in turn related to how fast the gate
+capacitance of the MOSFET can be charged and discharged.
+        \begin{equation}
+        dT = \frac{\left[ dV \times C\right]}{I} = \frac{Q}{I}
+        \end{equation}
+
+Where;
+        \begin{itemize}
+        \item $dV$ = Gate voltage
+        \item $C$ = Gate capacitance
+        \item $I$ = Peak drive current
+        \item $Q$ = Total gate charge
+        \end{itemize}
+
+In the case of the IRF1405, the total gate charge is \todo{not sure,
+used max total gate charge} 260nC and a turn on/off time of $t = t_r + t_f =
+300ns$
+
+Thus we have a required average current draw of
+        \begin{equation}
+        I = \frac{Q}{dT} = \frac{260 \times 10^{-9}}{300 \times 10^{-9}} = 0.9A
+        \end{equation}
+
+%-----------------------------------------------------------
+\subsection{Power Dissipation}
+There are three elements due to the charging and discharging of the gate
+capacitance of the MOSFET
+\footnote{\href{http://ww1.microchip.com/downloads/en/AppNotes/00799b.pdf}{Microchip AN799: Matching MOSFET Drivers to MOSFETs}}:
+        \begin{enumerate}
+        \item Power dissipation due to the charging and discharging of the gate
+        capacitance of the MOSFET, $P_C$
+        \item Power dissipation due to quiescent current draw of the MOSFET driver,
+        $P_Q$
+        \item Power dissipation due to cross-conduction (shoot-through) current in
+        the MOSFET driver, $P_S$
+        \end{enumerate}

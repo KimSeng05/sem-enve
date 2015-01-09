@@ -1,0 +1,50 @@
+\section{Motor Parameters}
+The motor selection is the first step taken in order to design the motor
+controller. The motor was selected based on the application it was to be used
+in. The vehicles average and maximum speeds, and peak acceleration/deceleration
+was used as the criterion.
+The motor selected was the \href{http://www.hobbyking.com/hobbyking/store/__14404__Turnigy_G46_Brushless_Outrunner_670kv_46_Glow_.html}{Turnigy
+G46 Brushless Outrunner}.
+
+\begin{figure}[h!]
+        \centering
+        \begin{tabular}{ll}
+        \hline
+        Parameter & Value \\
+        \hline
+        Recommended Battery & 4-5 Cells @ 14.4-18.5V\\
+        RPM & 670kv\\
+        Max Current & 40A\\
+        No Load Current & 10V/3.9A\\
+        Current Capacity & 55A/15sec\\
+        Internal Resistance & 0.04 ohm\\
+        Weight & 303g\\
+        Diameter of Shaft & 6mm\\
+        Dimensions & 76x50mm\\
+        \hline
+        \end{tabular}
+        \caption{Motor Parameters}
+\end{figure}
+
+\subsection{Motor Demands}
+The boundary parameters mentioned previously are also essential in selecting
+the components for the power stage of the motor controller. These parameters are
+as follows;
+
+\begin{figure}[h!]
+        \centering
+        \begin{tabular}{ll}
+        \hline
+        Parameter & Value \\
+        \hline
+        Average Speed & 30 km h$^{-1}$\\
+        Peak Speed & 52 km h$^{-1}$\\
+        Wheel diameter & 0.6m\\
+        Wheel Reduction Ratio & 1:10\\
+        Average RPM (for switching frequency) & 2653 RPM\\
+        Peak RPM (for switching frequency) & 4598 RPM \\
+        Peak Acceleration (for dv/dt FET capabilities) & 0.856 RPM s$^{-1}$\\
+        \hline
+        \end{tabular}
+        \caption{Motor Boundaries}
+\end{figure}
