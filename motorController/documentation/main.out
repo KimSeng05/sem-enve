@@ -1,7 +1,10 @@
-\BOOKMARK [1][-]{section.1}{Motor Parameters}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Motor Demands}{section.1}% 2
-\BOOKMARK [1][-]{section.2}{MOSFETs}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{Bootstrapping}{section.2}% 4
-\BOOKMARK [1][-]{section.3}{Gate Driver}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Peak Current Drive Requirements}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.2}{Power Dissipation}{section.3}% 7
+\BOOKMARK [1][-]{section.1}{Preface}{}% 1
+\BOOKMARK [1][-]{section.2}{Motor Parameters}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Motor Demands}{section.2}% 3
+\BOOKMARK [1][-]{section.3}{MOSFETs}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{Bootstrapping}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Bootstrap Didodes}{subsection.3.1}% 6
+\BOOKMARK [1][-]{section.4}{Gate Driver}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Peak Current Drive Requirements}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Power Dissipation}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Firmware}{}% 10

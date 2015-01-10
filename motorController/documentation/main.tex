@@ -5,6 +5,7 @@
     \usepackage[english]{babel}
     \usepackage{fancyhdr} %for fancy page style
     \usepackage{color} %Added support for color text
+    \usepackage[latin1]{inputenc}
 
     %Document Dynamics
     \usepackage[colorlinks=true]{hyperref} %Manage links
@@ -19,6 +20,7 @@
     \usepackage{amsthm}
     \usepackage{amssymb}
     \usepackage{tikz}
+        \usetikzlibrary{shapes,arrows}
     \usepackage{listings} %To insert code blocks
 
     %Drafting
@@ -28,7 +30,7 @@
     \newcommand\partsDir{./parts/}
 
 %=== TITLE =====================================================================
-    \title{\Large\textbf{BLDC Motor Controller Design}}
+    \title{\Large\textbf{BLDC Electronic Speed Controler Design}}
     \author{Khanh J. Phan}
     \date{Last Updated: \today}
 
@@ -41,8 +43,10 @@
     %\listoftables
 
 %=== BODY ======================================================================
+\input{\partsDir preface.tex}
 \input{\partsDir motor.tex}
 \input{\partsDir mosfets.tex}
 \input{\partsDir driver.tex}
+\input{\partsDir firmwareFlowChart.tex}
 \end{document}
 

@@ -1,8 +1,11 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Motor Parameters}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}Motor Demands}{1}{subsection.1.1}
-\contentsline {section}{\numberline {2}MOSFETs}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Bootstrapping}{2}{subsection.2.1}
-\contentsline {section}{\numberline {3}Gate Driver}{2}{section.3}
-\contentsline {subsection}{\numberline {3.1}Peak Current Drive Requirements}{3}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Power Dissipation}{3}{subsection.3.2}
+\contentsline {section}{\numberline {1}Preface}{1}{section.1}
+\contentsline {section}{\numberline {2}Motor Parameters}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Motor Demands}{1}{subsection.2.1}
+\contentsline {section}{\numberline {3}MOSFETs}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Bootstrapping}{2}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Bootstrap Didodes}{3}{subsubsection.3.1.1}
+\contentsline {section}{\numberline {4}Gate Driver}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Peak Current Drive Requirements}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Power Dissipation}{4}{subsection.4.2}
+\contentsline {section}{\numberline {5}Firmware}{5}{section.5}

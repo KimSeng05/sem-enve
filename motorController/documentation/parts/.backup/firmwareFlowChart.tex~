@@ -1,0 +1,65 @@
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=red!20,
+    text width=5.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=15em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=green!20, node distance=3cm,
+    minimum height=2em]
+
+\section{Firmware}
+\begin{tikzpicture}[node distance = 3cm, auto]
+	% Place nodes
+    \footnotesize
+    \node [cloud] (main) {\textbf{main()}};
+    \node [block, below of=main] (init) {\textbf{init()}\\\begin{itemize}
+                                \item Configure system clock/frequency
+                                \item Configure GPIO inputs for Hall sensors
+                                \item Configure PWM registers
+                                \item Configure ADC registers\end{itemize}};
+        \path [line] (main) -- (init);
+    \node [decision, below of=init, shift={(0mm,-1cm)}] (motorCheck) {motor == running?};
+        \path [line] (init) -- (motorCheck);
+        \node [block, right of=motorCheck, shift={(2cm,0mm)}] (motorStart) {\textbf{startMotor()}};
+            \path [line] (motorCheck) -- node [near start] {no} (motorStart);
+
+    \node [block, below of=motorCheck, shift={(0mm,0mm)}] (adcRead) {ADCSRA $|$= 1$<<$ADSC};
+        \path [line] (motorCheck) -- node [near start] {yes} (adcRead);
+
+    \node [decision, below of=adcRead, shift={(0mm,0mm)}] (adcCheck) {ADC Ready?};
+        \path [line] (adcRead) -- (adcCheck);
+        \path [line] (motorStart) |- (adcCheck);
+        \node [cloud, left of=adcCheck, shift={(0mm,0mm)}] (add1) { };
+            \path [line] (adcCheck) -- node [near start] {no} (add1);
+            \path [line] (add1) |- (adcRead);
+
+    \node [block, below of=adcCheck, shift={(0mm,0mm)}] (adcIn) {Speed input
+    measurement\\\begin{itemize}
+                    \item Average accumulated result
+                    \item Convert average to PWM duty cycle and
+                    update\end{itemize} };
+        \path [line] (adcCheck) -- node [near start] {yes} (adcIn);
+        \path [line] (adcIn) -| (add1);
+
+	%\node [block] (init) {initialize model};
+	%\node [cloud, left of=init] (expert) {expert};
+	%\node [cloud, right of=init] (system) {system};
+	%\node [block, below of=init] (identify) {identify candidate models};
+	%\node [block, below of=identify] (evaluate) {evaluate candidate models};
+	%\node [block, left of=evaluate, node distance=3cm] (update) {update model};
+	%\node [decision, below of=evaluate] (decide) {is best candidate better?};
+	%\node [block, below of=decide, node distance=3cm] (stop) {stop};
+	%% Draw edges
+	%\path [line] (init) -- (identify);
+	%\path [line] (identify) -- (evaluate);
+	%\path [line] (evaluate) -- (decide);
+	%\path [line] (decide) -| node [near start] {yes} (update);
+	%\path [line] (update) |- (identify);
+	%\path [line] (decide) -- node {no}(stop);
+	%\path [line,dashed] (expert) -- (init);
+	%\path [line,dashed] (system) -- (init);
+	%\path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+
+
+\end{document}
