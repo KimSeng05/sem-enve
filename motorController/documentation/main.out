@@ -2,9 +2,13 @@
 \BOOKMARK [1][-]{section.2}{Motor Parameters}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Motor Demands}{section.2}% 3
 \BOOKMARK [1][-]{section.3}{MOSFETs}{}% 4
-\BOOKMARK [2][-]{subsection.3.1}{Bootstrapping}{section.3}% 5
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Bootstrap Didodes}{subsection.3.1}% 6
-\BOOKMARK [1][-]{section.4}{Gate Driver}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Peak Current Drive Requirements}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Power Dissipation}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Firmware}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Switching Frequency}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Bootstrapping}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Bootstrap Didodes}{subsection.3.2}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Level Shifters}{subsection.3.2}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Disadvantages}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Latch Up on Source}{subsection.3.2}% 10
+\BOOKMARK [1][-]{section.4}{Gate Driver}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Peak Current Drive Requirements}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Power Dissipation}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Firmware}{}% 14

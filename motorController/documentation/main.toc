@@ -3,9 +3,13 @@
 \contentsline {section}{\numberline {2}Motor Parameters}{1}{section.2}
 \contentsline {subsection}{\numberline {2.1}Motor Demands}{1}{subsection.2.1}
 \contentsline {section}{\numberline {3}MOSFETs}{2}{section.3}
-\contentsline {subsection}{\numberline {3.1}Bootstrapping}{2}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Bootstrap Didodes}{3}{subsubsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1}Switching Frequency}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Bootstrapping}{3}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Bootstrap Didodes}{4}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Level Shifters}{4}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Disadvantages}{4}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Latch Up on Source}{4}{subsubsection.3.2.4}
 \contentsline {section}{\numberline {4}Gate Driver}{4}{section.4}
 \contentsline {subsection}{\numberline {4.1}Peak Current Drive Requirements}{4}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Power Dissipation}{4}{subsection.4.2}
-\contentsline {section}{\numberline {5}Firmware}{5}{section.5}
+\contentsline {subsection}{\numberline {4.2}Power Dissipation}{5}{subsection.4.2}
+\contentsline {section}{\numberline {5}Firmware}{6}{section.5}

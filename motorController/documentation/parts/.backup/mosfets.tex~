@@ -26,6 +26,15 @@ A summary of the MOSFETs parameters is below:
         \caption{IRF1405 Specifications}
 \end{figure}
 
+The H-bridge was chosen to be designed with two N-channel MOSFETs despite the
+extra complexity involved in maintaining a sufficent gate voltage to the high
+side N-channel MOSFETs, compared to the simplier P-channel MOSFETs. This is
+because N-channel MOSFETs exhibit lower on resistances and hence minimized power
+losses.
+
+%-----------------------------------------------------------
+\subsection{Switching Frequency}
+
 %-----------------------------------------------------------
 \subsection{Bootstrapping}
 The N-Channel MOSFET proposed to be used on the high side of the power stage
@@ -68,6 +77,7 @@ The necessary calculations are:
         \item $LK,D$ indicates the leakage current through the bootstap didoe
         \end{itemize}
 
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsubsection{Bootstrap Didodes}
 The bootstrap diode ($D_{BS}$) needs to be able to block the full power rail
 voltage, which is seen when the high side MOSFET is switched
@@ -80,5 +90,21 @@ less)\footnote{\href{http://www.ixysic.com/home/pdfs.nsf/www/AN-400.pdf/$file/AN
 AN-400: IX2127 Design Considerations}}
 
 Due to the low voltages
-involved\footnote{\href{\url{http://www.electronicspoint.com/threads/what-is-the-difference-between-schottky-and-fast-recovery-diode.97716/\#post-669477}}{Community Forums, answer by John Popelish}}
+involved\footnote{\href{http://www.electronicspoint.com/threads/what-is-the-difference-between-schottky-and-fast-recovery-diode.97716/\#post-669477}{Community Forums, answer by John Popelish}}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Level Shifters}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Disadvantages}
+Whilst bootstrapping has the advantage of being a simple and low cost
+implementation, it is not without disadvantages. The duty-cycle and on-time is
+limited by the requirement to refresh the charge in the bootstrap capacitor.
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Latch Up on Source}
+In the case of negative voltage in the
+source\footnote{\href{https://www.fairchildsemi.com/application-notes/AN/AN-6076.pdf}{Fairchild
+AN-6076: Design and Application Guide for Bootstrap Circuit for High Voltage
+Gate Drive IC}}
 
