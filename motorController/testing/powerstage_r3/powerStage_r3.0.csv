@@ -1,0 +1,34 @@
+#Testing of power bridge r3.0
+#Single phase output
+
+#0: Gate Driver HIN
+#1: Gate Driver LIN
+#2: Gate Driver COM
+#3: Gate Driver LO
+#7: Gate Driver VCC
+#6: Gate Driver VS
+#5: Gate Driver HO
+#4: Gate Driver VB
+#8: Output
+#-------------------------------------------------------------------------------
+#TEST 1
+4.97,0.xx,0.xx,0.xx,12.08,5.21,5.21,12.08,5.20
+0.xx,4.97,0.00,0.xx,12.09, #STOP: Driver heating for low signals
+#end test
+
+#-------------------------------------------------------------------------------
+#[2015-01-13 19:30] VB needs to be connected after the diode
+#[2015-01-13 19:40] Reconnected
+################################################################################
+#POWER BRIDGE r3.1
+################################################################################
+#-------------------------------------------------------------------------------
+#TEST 2
+4.97,0.xx,0.xx,0.xx,11.61,4.98,4.98,12.08,4.98
+#end test
+#[2015-01-13 19:43] HO still giving 5V for 4.97V input
+
+#-------------------------------------------------------------------------------
+#[2015-01-13 20:08] Need to switch between HIGH and LOW at high frequency to see
+#bootstrapping effect
+
